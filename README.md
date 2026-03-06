@@ -57,7 +57,8 @@ streamlit run app.py
 ## Author
 
 Navjot Kaur  
-Data Scientist | ML & Data Automation Specialist  
+Data Scientist | ML & Data Automation Specialist 
+Email:- nkaur4047@gmail.com
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/navjot-kaur-b61aab299/)
 
