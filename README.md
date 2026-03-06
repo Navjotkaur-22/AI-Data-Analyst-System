@@ -11,6 +11,12 @@ An AI-powered data analysis tool that allows users to upload datasets, explore i
 • Natural language data queries  
 • Downloadable PDF analysis reports
 
+## Live Application
+
+You can try the deployed app here:
+
+[![Launch App](https://img.shields.io/badge/Streamlit-Live%20Demo-red?logo=streamlit)](https://your-streamlit-link.streamlit.app)
+
 ## Tech Stack
 
 Python  
@@ -23,7 +29,7 @@ ReportLab
 
 1. Clone the repository
 
-git clone <repo_link>
+git clone <https://github.com/Navjotkaur-22/AI-Data-Analyst-System>
 
 2. Install dependencies
 
@@ -51,5 +57,8 @@ streamlit run app.py
 ## Author
 
 Navjot Kaur  
-Data Scientist | ML & Data Automation Specialist
-Email- nkaur4047@gmail.com
+Data Scientist | ML & Data Automation Specialist  
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/navjot-kaur-b61aab299/)
+
+[![Upwork](https://img.shields.io/badge/Upwork-Hire%20Me-green?logo=upwork)](https://www.upwork.com/freelancers/~01b30aa09d478b524c)
