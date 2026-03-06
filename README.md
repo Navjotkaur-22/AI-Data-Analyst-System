@@ -15,7 +15,7 @@ An AI-powered data analysis tool that allows users to upload datasets, explore i
 
 You can try the deployed app here:
 
-[![Launch App](https://img.shields.io/badge/Streamlit-Live%20Demo-red?logo=streamlit)](https://your-streamlit-link.streamlit.app)
+[![Launch App](https://img.shields.io/badge/Streamlit-Live%20Demo-red?logo=streamlit)](https://ai-data-analyst-system-tylybdsucektppblzeh4ft.streamlit.app/)
 
 ## Tech Stack
 
