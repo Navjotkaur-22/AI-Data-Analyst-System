@@ -8,13 +8,13 @@ from visualization import (
     create_scatter_plot,
     create_correlation_heatmap
 )
-from ai_agent import basic_query
+from ai_agent import run_llm_query
 from report_generator import create_report
 
 st.set_page_config(page_title="AI Data Analyst System", layout="wide")
 
 st.title("AI Data Analyst System")
-st.write("Upload your dataset and explore insights.")
+st.write("Upload your dataset and explore insights using AI.")
 
 uploaded_file = st.file_uploader("Upload CSV or Excel file", type=["csv", "xlsx"])
 
@@ -24,12 +24,14 @@ if uploaded_file is not None:
 
     st.success("Dataset Loaded Successfully")
 
-    st.subheader("Dataset Preview")
+    # Dataset preview
+    st.markdown("### Dataset Preview")
     st.dataframe(df.head())
 
+    # Data profile
     profile = data_profile(df)
 
-    st.subheader("Data Profile")
+    st.markdown("### Data Profile")
 
     st.write("Rows:", profile["rows"])
     st.write("Columns:", profile["columns"])
@@ -37,14 +39,16 @@ if uploaded_file is not None:
     st.write("Missing Values:", profile["missing_values"])
     st.write("Data Types:", profile["data_types"])
 
-    st.subheader("AI Insights")
+    # AI insights
+    st.markdown("### AI Insights")
 
     insights = generate_basic_insights(df)
 
     for insight in insights:
         st.write("-", insight)
 
-    st.subheader("Visualization")
+    # Visualization
+    st.markdown("### Visualization")
 
     chart_type = st.selectbox(
         "Select Chart Type",
@@ -52,6 +56,7 @@ if uploaded_file is not None:
     )
 
     if chart_type in ["Histogram", "Bar Chart", "Line Chart"]:
+
         column = st.selectbox("Select column", df.columns)
 
         if chart_type == "Histogram":
@@ -80,17 +85,29 @@ if uploaded_file is not None:
 
         st.plotly_chart(fig)
 
-    st.subheader("Ask AI Analyst")
+    # AI Query Section
+    st.markdown("### Ask AI Analyst")
 
     user_query = st.text_input("Ask a question about your data")
 
     if user_query:
-        result = basic_query(df, user_query)
 
-        st.write("Result:")
+        ai_response = run_llm_query(df, user_query)
+
+        if "Explanation:" in ai_response:
+            result, explanation = ai_response.split("Explanation:", 1)
+        else:
+            result = ai_response
+            explanation = "No explanation generated."
+
+        st.markdown("### Analysis Result")
         st.write(result)
 
-    st.subheader("Download Report")
+        st.markdown("### AI Explanation")
+        st.info(explanation)
+
+    # PDF Report
+    st.markdown("### Download Report")
 
     if st.button("Generate PDF Report"):
 
